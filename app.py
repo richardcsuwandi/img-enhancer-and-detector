@@ -65,7 +65,7 @@ def main():
         st.image(my_image, width=500)
         if choice == "Image Enhancement":
             st.subheader("Result")
-            types = ["Gray-Scale", "Contrast", "Brightness", "Color Balance", "Blur", "Cartonize"]
+            types = ["Gray-Scale", "Contrast", "Brightness", "Color Balance", "Blur", "Cartoonize"]
             enhance_type = st.sidebar.radio("Enhancement Type", types)
             # Gray-scale
             if enhance_type == "Gray-Scale":
@@ -85,7 +85,7 @@ def main():
             elif enhance_type == "Brightness":
                 brightness_rate = st.sidebar.slider("Brightness Rate", 0.5, 3.0, step=0.1)
                 enhancer = ImageEnhance.Brightness(my_image)
-                img_output = enhancer.enhance(c_rate)
+                img_output = enhancer.enhance(brightness_rate)
                 st.image(img_output, width=500)
 
             elif enhance_type == "Color Balance":
@@ -101,8 +101,8 @@ def main():
                 blur_img = cv2.GaussianBlur(img, (11,11), blur_rate)
                 st.image(blur_img, width=500)
 
-            # Cartonize
-            elif enhance_type == "Cartonize":
+            # Cartoonize
+            elif enhance_type == "Cartoonize":
                 result_img = cartonize_image(my_image)
                 st.image(result_img, width=500)
 
