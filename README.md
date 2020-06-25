@@ -1,5 +1,5 @@
 # Image Enhancer and Detector
- This project is one of my machine learning and data-driven web apps made using Streamlit. The goal of this project is to built an image enhancer and detector app using OpenCV. View this app in action [here]()
+ This project is one of my machine learning and data-driven web apps made using Streamlit. The goal of this project is to built an image enhancer and detector app using OpenCV.
 
 ## Demo
 Here are some demos on how to use the app,
