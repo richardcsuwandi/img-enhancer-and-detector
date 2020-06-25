@@ -55,9 +55,6 @@ def main():
 
     image_file = st.sidebar.file_uploader("Upload image", type=["jpg","png","jpeg"])
 
-    if st.sidebar.checkbox("Use default image", False):
-        image_file = "./test-image.jpeg"
-
     task = ["Image Enhancement", "Image Detection"]
     choice = st.sidebar.selectbox("Choose task", task)
 
