@@ -2,7 +2,6 @@ import streamlit as st
 import cv2
 from PIL import Image, ImageEnhance
 import numpy as np
-import os
 
 # Import the Haar Cascade Classifier model
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
@@ -55,6 +54,9 @@ def main():
     st.sidebar.markdown("By Richard Cornelius Suwandi")
 
     image_file = st.sidebar.file_uploader("Upload image", type=["jpg","png","jpeg"])
+
+    if st.sidebar.checkbox("Use default image", False):
+        image_file = "./test-image.jpeg"
 
     task = ["Image Enhancement", "Image Detection"]
     choice = st.sidebar.selectbox("Choose task", task)
