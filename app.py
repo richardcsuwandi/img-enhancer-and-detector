@@ -22,26 +22,26 @@ def detect_faces(image):
 
         roi = img[y:y+h, x:x+w]
 
-        # Detecting eyes in the face(s) detected
+        # Detect eyes in the face(s) detected
         eyes = eye_cascade.detectMultiScale(roi)
 
-        # Detecting smiles in the face(s) detected
+        # Detect smiles in the face(s) detected
         smile = smile_cascade.detectMultiScale(roi, minNeighbors = 25)
 
-        # Drawing rectangle around eyes
-        for (ex,ey,ew,eh) in eyes:
+        # Draw rectangle around eyes
+        for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(roi, (ex, ey), (ex+ew, ey+eh), (0,255,0), 2)
 
-        # Drawing rectangle around smile
-        for (sx,sy,sw,sh) in smile:
+        # Draw rectangle around smile
+        for (sx, sy, sw, sh) in smile:
             cv2.rectangle(roi, (sx, sy), (sx+sw, sy+sh), (0,0,255), 2)
 
     # Returning the image with bounding boxes drawn on it and the counts
     return img, faces
 
 def cartonize_image(image):
-    new_img = np.array(image.convert("RGB"))
-    img = cv2.cvtColor(new_img,1)
+    img = np.array(image.convert("RGB"))
+    img = cv2.cvtColor(img,1)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     gray = cv2.medianBlur(gray, 5)
     edges = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 9)
@@ -50,8 +50,8 @@ def cartonize_image(image):
     return cartoon
 
 def cannize_image(image):
-    new_img = np.array(image.convert("RGB"))
-    img = cv2.cvtColor(new_img,1)
+    img = np.array(image.convert("RGB"))
+    img = cv2.cvtColor(img,1)
     img = cv2.GaussianBlur(img, (11, 11), 0)
     canny = cv2.Canny(img, 100, 150)
     return canny
