@@ -3,7 +3,7 @@ import cv2
 from PIL import Image, ImageEnhance
 import numpy as np
 
-# Loading the pre-trained Haar Cascade classifier
+# Load the pre-trained Haar Cascade classifier
 try:
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
