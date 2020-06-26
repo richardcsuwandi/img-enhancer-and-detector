@@ -9,4 +9,4 @@ Here are some demos on how to use the app,
 ![Demo](https://github.com/richardcsuwandi/img-enhancer-and-detector/blob/master/img-enhancement.gif?raw=true)
 
 ### Image Detection
-![Demo 2](https://github.com/richardcsuwandi/img-enhancer-and-detector/blob/master/img-detection.gif?raw=true)
+![Demo 2]
