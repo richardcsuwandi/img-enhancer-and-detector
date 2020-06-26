@@ -3,7 +3,7 @@ import cv2
 from PIL import Image, ImageEnhance
 import numpy as np
 
-# Load the pre-trained Haar Cascade classifier
+# Load the pre-trained Haar Cascade classifiers
 try:
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
     eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
@@ -39,9 +39,9 @@ def detect_faces(image):
     # Returning the image with bounding boxes drawn on it and the counts
     return img, faces
 
-def cartonize_image(image):
+def cartoonize_image(image):
     img = np.array(image.convert("RGB"))
-    img = cv2.cvtColor(img,1)
+    img = cv2.cvtColor(img, 1)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     gray = cv2.medianBlur(gray, 5)
     edges = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 9)
@@ -51,7 +51,7 @@ def cartonize_image(image):
 
 def cannize_image(image):
     img = np.array(image.convert("RGB"))
-    img = cv2.cvtColor(img,1)
+    img = cv2.cvtColor(img, 1)
     img = cv2.GaussianBlur(img, (11, 11), 0)
     canny = cv2.Canny(img, 100, 150)
     return canny
@@ -67,14 +67,18 @@ def main():
     task = ["Image Enhancement", "Image Detection"]
     choice = st.sidebar.selectbox("Choose task", task)
 
+    # Open and preview original image
     if image_file is not None:
         image = Image.open(image_file)
         st.subheader("Original")
         st.image(image, width=500)
+
+        # Image enhancement
         if choice == "Image Enhancement":
             st.subheader("Result")
             types = ["Gray-Scale", "Contrast", "Brightness", "Color Balance", "Blur", "Cartoonize"]
             enhance_type = st.sidebar.radio("Enhancement Type", types)
+
             # Gray-scale
             if enhance_type == "Gray-Scale":
                 new_img = np.array(image.convert("RGB"))
@@ -96,11 +100,13 @@ def main():
                 img_output = enhancer.enhance(brightness_rate)
                 st.image(img_output, width=500)
 
+            # Color balance
             elif enhance_type == "Color Balance":
                 color_balance = st.sidebar.slider("Color Balance", 0.5, 3.0, step=0.1)
                 enhancer = ImageEnhance.Color(image)
                 img_output = enhancer.enhance(color_balance)
                 st.image(img_output, width=500)
+
             # Blur
             elif enhance_type == "Blur":
                 new_img = np.array(image.convert("RGB"))
@@ -111,15 +117,16 @@ def main():
 
             # Cartoonize
             elif enhance_type == "Cartoonize":
-                result_img = cartonize_image(image)
+                result_img = cartoonize_image(image)
                 st.image(result_img, width=500)
 
         else:
-            # Face detection
+            # Image detection
             detector_list = ["Face Detector", "Canny Edge Detector"]
             detector_choice = st.sidebar.radio("Select Detector", detector_list)
             if st.sidebar.button("Process"):
                 st.subheader("Result")
+
                 # Face detector
                 if detector_choice == "Face Detector":
                     result_img, result_faces = detect_faces(image)
@@ -128,6 +135,8 @@ def main():
                         st.success(f"Found {len(result_faces)} faces")
                     else:
                         st.success(f"Found {len(result_faces)} face")
+
+                # Canny Edge Detector
                 elif detector_choice == "Canny Edge Detector":
                     result_img = cannize_image(image)
                     st.image(result_img, width=500)
