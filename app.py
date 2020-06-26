@@ -3,9 +3,13 @@ import cv2
 from PIL import Image, ImageEnhance
 import numpy as np
 
-# Import the Haar Cascade Classifier model
-face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
-eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
+# Loading the pre-trained Haar Cascade classifier
+try:
+    face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+    eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml')
+    smile_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_smile.xml')
+except Exception:
+    st.write("Error loading cascade classifiers")
 
 def detect_faces(my_image):
     new_img = np.array(my_image.convert("RGB"))
