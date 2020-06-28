@@ -7,5 +7,5 @@ Here are some demos on how to use the app,
 **Image Enhancement**
 ![Demo](https://github.com/richardcsuwandi/img-enhancer-and-detector/blob/master/demo1.gif?raw=true)
 
-### Image Detection
+**Image Detection**
 ![Demo 2](https://github.com/richardcsuwandi/img-enhancer-and-detector/blob/master/demo2.gif?raw=true)
