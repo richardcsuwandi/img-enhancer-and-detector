@@ -58,9 +58,9 @@ def cannize_image(image):
 
 def main():
     st.title("Image Enhancer and Detector 👀")
-    st.markdown("By Richard Cornelius Suwandi")
     st.sidebar.title("Image Enhancer and Detector 👀")
-    st.sidebar.markdown("By Richard Cornelius Suwandi")
+    st.markdown("### By [Richard Cornelius Suwandi](https://github.com/richardcsuwandi)")
+    st.sidebar.markdown("By [Richard Cornelius Suwandi](https://github.com/richardcsuwandi)")
 
     image_file = st.sidebar.file_uploader("Upload image", type=["jpg","png","jpeg"])
 
