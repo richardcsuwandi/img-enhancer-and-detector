@@ -9,3 +9,5 @@ Here are some demos on how to use the app,
 
 **Image Detection**
 ![Demo 2](https://github.com/richardcsuwandi/img-enhancer-and-detector/blob/master/demo2.gif?raw=true)
+
+All images used in the demos are completely royalty free and licensed under the [Pexels](https://pexels.com) license.
