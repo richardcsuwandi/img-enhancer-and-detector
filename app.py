@@ -59,7 +59,9 @@ def cannize_image(image):
 def main():
     st.title("Image Enhancer and Detector 👀")
     st.sidebar.title("Image Enhancer and Detector 👀")
-    st.markdown("### By [Richard Cornelius Suwandi](https://github.com/richardcsuwandi)")
+    st.subheader("An image enhancer and detector app using PIL and OpenCV.")
+    st.sidebar.subheader("An image enhancer and detector app using PIL and OpenCV.")
+    st.sidebar.markdown("[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/richardcsuwandi/img-enhancer-and-detector)")
     st.sidebar.markdown("By [Richard Cornelius Suwandi](https://github.com/richardcsuwandi)")
 
     image_file = st.sidebar.file_uploader("Upload image", type=["jpg","png","jpeg"])
@@ -140,6 +142,9 @@ def main():
                 elif detector_choice == "Canny Edge Detector":
                     result_img = cannize_image(image)
                     st.image(result_img, width=500)
+
+    else:
+        st.info("Please upload an image to get started.")
 
 if __name__ == "__main__":
     main()
