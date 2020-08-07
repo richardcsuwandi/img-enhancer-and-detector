@@ -4,7 +4,7 @@ This project is one of my machine learning and data-driven web apps made using S
 ## Demo
 Here are some demos on how to use the app,
 
-**Image Enhancement**
+### Image Enhancement
 ![Demo](https://github.com/richardcsuwandi/img-enhancer-and-detector/blob/master/demo1.gif?raw=true)
 
 Image enhancement features:
@@ -15,7 +15,7 @@ Image enhancement features:
 - Blur
 - Cartoonize
 
-**Image Detection**
+### Image Detection
 ![Demo 2](https://github.com/richardcsuwandi/img-enhancer-and-detector/blob/master/demo2.gif?raw=true)
 
 Image detector options:
