@@ -57,8 +57,8 @@ def cannize_image(image):
     return canny
 
 def main():
-    st.title("Image Enhancer and Detector 👀")
-    st.sidebar.title("Image Enhancer and Detector 👀")
+    st.title("Image Enhancer and Detector 🖼️")
+    st.sidebar.title("Image Enhancer and Detector 🖼️")
     st.sidebar.subheader("By [Richard Cornelius Suwandi](https://github.com/richardcsuwandi)")
     st.sidebar.markdown("[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/richardcsuwandi/img-enhancer-and-detector)")
     st.subheader("An image enhancer and detector app using PIL and OpenCV.")
