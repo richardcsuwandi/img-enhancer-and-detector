@@ -59,10 +59,10 @@ def cannize_image(image):
 def main():
     st.title("Image Enhancer and Detector 👀")
     st.sidebar.title("Image Enhancer and Detector 👀")
-    st.subheader("An image enhancer and detector app using PIL and OpenCV.")
-    st.sidebar.subheader("An image enhancer and detector app using PIL and OpenCV.")
+    st.sidebar.subheader("By [Richard Cornelius Suwandi](https://github.com/richardcsuwandi)")
     st.sidebar.markdown("[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/richardcsuwandi/img-enhancer-and-detector)")
-    st.sidebar.markdown("By [Richard Cornelius Suwandi](https://github.com/richardcsuwandi)")
+    st.subheader("An image enhancer and detector app using PIL and OpenCV.")
+    st.sidebar.markdown("An image enhancer and detector app using PIL and OpenCV.")
 
     image_file = st.sidebar.file_uploader("Upload image", type=["jpg","png","jpeg"])
 
