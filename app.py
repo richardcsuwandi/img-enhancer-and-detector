@@ -57,6 +57,13 @@ def cannize_image(image):
     return canny
 
 def main():
+
+    # Page layout
+    st.set_page_config(page_title="Image Enhancer and Detector App",
+    layout="wide",
+    initial_sidebar_state="expanded")
+
+    # Title and description
     st.title("Image Enhancer and Detector 🖼️")
     st.sidebar.title("Image Enhancer and Detector 🖼️")
     st.sidebar.subheader("By [Richard Cornelius Suwandi](https://github.com/richardcsuwandi)")
